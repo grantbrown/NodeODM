@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  nodeodm-wkr:
+    image: gbnodm 
+    container_name: gbnodm
+    ports:
+      - "3000"
+    restart: on-failure:10
+

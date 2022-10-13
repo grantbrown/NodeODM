@@ -1,5 +1,6 @@
 FROM opendronemap/odm:latest
 MAINTAINER Piero Toffanin <pt@masseranolabs.com>
+ARG ACCESS_TOKEN=abcdefg
 
 EXPOSE 3000
 
@@ -19,4 +20,4 @@ COPY . /var/www
 
 RUN npm install --production && mkdir -p tmp
 
-ENTRYPOINT ["/usr/bin/node", "/var/www/index.js"]
+ENTRYPOINT ["/usr/bin/node", "/var/www/index.js", "--token=$ACCESS_TOKEN"]
